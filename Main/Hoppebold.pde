@@ -1,31 +1,20 @@
-class Hoppebold{
-//class variabler
-  float posX; float posY; 
-  float r = random(0,width);
-  
-  PVector boldPos;
-  PVector location;
-  PVector acceleration;
-  
-  
- 
-  void TegnBold(){
-    boldPos = new PVector();
-    location = new PVector(100,100);
-    boldPos.add(location);
-    ellipse(boldPos.x, boldPos.y, 30, 30);
-   
-    
+class Hoppebold {
+  float x;
+  float y; 
+
+  Hoppebold(float tempX, float tempY) {
+    tempX = x;
+    tempY = y;
   }
-  
-  void Tyndekraft(){
-  
+
+  void TegnBold() {
+    location.add(velocity);
+    ellipse(location.x+x, location.y+y, 30, 30);
+  }
+
+  void Tyndekraft() {
   }  
-  
-  void Reflekter(){
-  
+
+  void Reflekter() {
   }
-  
-  
-  
 }
