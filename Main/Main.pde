@@ -11,7 +11,7 @@ void setup() {
   velocity = new PVector(0, 0);
   location = new PVector(100, 100);
 }
-
+//Sej draw
 void draw() {
   hb.TegnBold(); //HKSERHKSF
 }
