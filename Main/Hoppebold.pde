@@ -13,8 +13,15 @@ class Hoppebold {
     ellipse(location.x+x, location.y+y, 30, 30);
   }
 
-  void Tyndekraft() {
-  }  
+  void Tyndekraft(){
+    if (location.y <= height+15){
+      location.add(gravity);
+    }
+    
+    if (location.y >= height-15){
+     location.sub(gravity); 
+    }
+}
 
   void Reflekter() {
   }
