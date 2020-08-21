@@ -4,7 +4,7 @@ class Hoppebold {
 
   Hoppebold(float tempX, float tempY) {
     tempX = x;
-    tempY = y;
+    tempY = y; 
   }
 
   void TegnBold() {

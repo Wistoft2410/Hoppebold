@@ -2,7 +2,7 @@
 Hoppebold hb = new Hoppebold(0,0); //Målet er at kunne ænndre bold spawn pos
 
 //PVector objekt variabler  
-PVector location;
+PVector location; 
 PVector velocity;
 PVector acceleration;
 
