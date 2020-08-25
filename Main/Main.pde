@@ -1,22 +1,15 @@
-//globale variabler
-Hoppebold hb = new Hoppebold(0, 0); //Målet er at kunne ænndre bold spawn pos
-
-//PVector objekt variabler  
-PVector location; 
-PVector velocity;
-PVector acceleration;
-PVector gravity;
-
 void setup() {
   size(500, 500);
-  gravity = new PVector(0, 4);
+  location = new PVector(30, 30);
   velocity = new PVector(0, 0);
-  location = new PVector(100, 100);
+  acceleration = new PVector(0, 0);
 }
 
 void draw() {
   clear();
-  hb.TegnBold();
-  hb.Tyndekraft();
-  println(location);
+  //m.applyForce(wind); 
+  hb.applyForce(gravity);
+  hb.checkEdges();
+  hb.display();
+  hb.update();
 }

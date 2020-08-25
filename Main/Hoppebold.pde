@@ -1,28 +1,53 @@
-//This is hoppebold class 
+PVector wind = new PVector(0.01, 0); 
+PVector gravity = new PVector(0, 0.1); 
+
+Hoppebold hb = new Hoppebold(1);
+
+PVector location;
+PVector velocity;
+PVector acceleration;
+
+float mass;
+
 class Hoppebold {
-  float x;
-  float y; 
 
-  Hoppebold(float tempX, float tempY) {
-    tempX = x;
-    tempY = y;
+  Hoppebold(float tempMass) {
+    mass = tempMass;
+  }
+  
+  void applyForce(PVector force) {
+    PVector f = PVector.div(force, mass);
+    acceleration.add(f);
   }
 
-  void TegnBold() {
+  void update() {
+    velocity.add(acceleration);
     location.add(velocity);
-    ellipse(location.x+x, location.y+y, 30, 30);
+    acceleration.mult(0);
   }
 
-  void Tyndekraft() {
-    if (location.y <= height+15) {
-      location.add(gravity);
+  void display() {
+    stroke(0);
+    fill(255);
+    ellipse(location.x, location.y, mass*16, mass*16);
+  }
+
+  void checkEdges() {
+    if (location.x > width) {
+      location.x = width;
+      velocity.x *= -1;
+    } else if (location.x < 0) {
+      velocity.x *= -1;
+      location.x = 0;
     }
 
-    if (location.y >= height-15) {
-      location.sub(gravity);
+    if (location.y > height) {
+      velocity.y *= -1;
+      location.y = height;
     }
   }
-
-  void Reflekter() {
-  }
+  
+  void controlHoppebold(){
+        
+  } 
 }
