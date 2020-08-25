@@ -1,18 +1,19 @@
 PVector wind = new PVector(0.01, 0); 
 PVector gravity = new PVector(0, 0.1); 
 
-Hoppebold hb = new Hoppebold(1);
-
-PVector location;
-PVector velocity;
-PVector acceleration;
-
-float mass;
 
 class Hoppebold {
 
-  Hoppebold(float tempMass) {
+  PVector location = new PVector();
+  PVector velocity= new PVector();
+  PVector acceleration= new PVector();
+
+  float mass;
+
+  Hoppebold(float tempMass, int tempX, int tempY) {
     mass = tempMass;
+    location.x = tempX + random(0, 200);
+    location.y = tempY + random(0, 200);
   }
 
   void applyForce(PVector force) {
@@ -48,8 +49,13 @@ class Hoppebold {
   }
 
   void keyPressed() {
-    if(key = UP){}
-    if(key = LEFT){ }
-    if(key = DOWN){  }
-    if(key = RIGHT){ }
+    if (key == UP) {
+    }
+    if (key == LEFT) {
+    }
+    if (key == DOWN) {
+    }
+    if (key == RIGHT) {
+    }
   }
+}
