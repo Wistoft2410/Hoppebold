@@ -1,4 +1,4 @@
-Hoppebold[] hb = new Hoppebold[2];
+Hoppebold[] hb = new Hoppebold[10];
 
 void setup() {
   size(500, 500);
@@ -11,8 +11,8 @@ void baggrund() {
   
   background(145, 200, 250);
   fill(150);
-  quad(501, 430, 50, 501, 50, 501, 501, 501);
-  quad(-1, 450, 300, 501, 300, 502, -1, 502);  
+  ellipse(250,750,700,700);
+
 
   noStroke();
   fill(250, 215, 30);
@@ -30,12 +30,16 @@ void baggrund() {
 
 void draw() {
   clear();
+  
   baggrund();
-  //m.applyForce(wind); 
+   
   for (int i=0; i <2; i++) {
     hb[i].applyForce(gravity);
+    hb[i].applyForce(wind);
     hb[i].checkEdges();
     hb[i].display();
     hb[i].update();
+    hb[i].bounceFraBaggrund();
+    hb[i].col();
   }
 }

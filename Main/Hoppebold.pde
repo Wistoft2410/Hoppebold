@@ -48,6 +48,23 @@ class Hoppebold {
     }
   }
 
+  void bounceFraBaggrund() {
+    if (dist(location.x, location.y, 250, 750) < 350) {
+      velocity.y *= -1;
+    }
+  }
+  
+  void col() {
+    for (int i = 0; i < 2; i++) {
+      if (hb[i] != this) {
+        if (dist(location.x, location.y, hb[i].location.x, hb[i].location.y) < mass*16 ) {
+          velocity.x *=-1; 
+          velocity.y *=-1;
+        }
+      }
+    }
+  }
+
   void keyPressed() {
     if (key == UP) {
     }
