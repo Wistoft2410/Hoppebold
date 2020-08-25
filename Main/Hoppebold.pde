@@ -14,7 +14,7 @@ class Hoppebold {
   Hoppebold(float tempMass) {
     mass = tempMass;
   }
-  
+
   void applyForce(PVector force) {
     PVector f = PVector.div(force, mass);
     acceleration.add(f);
@@ -46,8 +46,10 @@ class Hoppebold {
       location.y = height;
     }
   }
-  
-  void controlHoppebold(){
-        
-  } 
-}
+
+  void keyPressed() {
+    if(key = UP){}
+    if(key = LEFT){ }
+    if(key = DOWN){  }
+    if(key = RIGHT){ }
+  }
