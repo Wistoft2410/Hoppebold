@@ -28,6 +28,8 @@ class Hoppebold {
 
   void display() {
     stroke(0);
+    
+    //Hoppebold
     fill(255);
     ellipse(location.x, location.y, mass*16, mass*16);
   }
@@ -55,7 +57,7 @@ class Hoppebold {
   }
 
   void col() {
-  for (Hoppebold nyHoppebold : nyHoppebold) {
+    for (Hoppebold nyHoppebold : nyHoppebold) {
       if (nyHoppebold != this) {
         if (dist(location.x, location.y, nyHoppebold.location.x, nyHoppebold.location.y) < mass*16 ) {
           velocity.x *=-1; 

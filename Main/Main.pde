@@ -2,9 +2,13 @@ ArrayList<Hoppebold> nyHoppebold;
 
 void baggrund() {
   background(145, 200, 250);
-  fill(150);
+  
+  //Bakken
+  fill(0, 200, 0);
   ellipse(250, 750, 700, 700);
   noStroke();  
+  
+  //Solen
   fill(250, 215, 30);
   pushMatrix();
   translate(450, 50);
@@ -18,12 +22,15 @@ void baggrund() {
   popMatrix();
 }
 
+void mouseClicked() {
+  for (int i=0; i < 2; i++)
+    nyHoppebold.add(new Hoppebold(1, 2, 3));
+}
+
+
 void setup() {
   size(500, 500);
   nyHoppebold = new ArrayList<Hoppebold>();
-
-  for (int i=0; i < 2; i++)
-    nyHoppebold.add(new Hoppebold(1, 2, 3));
 }
 
 void draw() {
