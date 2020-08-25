@@ -7,6 +7,22 @@ void setup() {
     hb[i] = new Hoppebold(1, 1, 1);
 }
 
+void draw() {
+  clear();
+  
+  baggrund();
+   
+  for (int i=0; i <2; i++) {
+    hb[i].applyForce(gravity);
+    hb[i].applyForce(wind);
+    hb[i].checkEdges();
+    hb[i].display();
+    hb[i].update();
+    hb[i].bounceFraBaggrund();
+    hb[i].col();
+  }
+}
+
 void baggrund() {
   
   background(145, 200, 250);
@@ -26,20 +42,4 @@ void baggrund() {
 
   ellipse(0, 0, 50, 50);
   popMatrix();
-}
-
-void draw() {
-  clear();
-  
-  baggrund();
-   
-  for (int i=0; i <2; i++) {
-    hb[i].applyForce(gravity);
-    hb[i].applyForce(wind);
-    hb[i].checkEdges();
-    hb[i].display();
-    hb[i].update();
-    hb[i].bounceFraBaggrund();
-    hb[i].col();
-  }
 }
