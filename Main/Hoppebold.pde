@@ -1,7 +1,6 @@
 PVector wind = new PVector(0.01, 0); 
 PVector gravity = new PVector(0, 0.1); 
 
-
 class Hoppebold {
 
   PVector location = new PVector();
@@ -45,6 +44,35 @@ class Hoppebold {
     if (location.y > height) {
       velocity.y *= -1;
       location.y = height;
+    }
+  }
+
+
+  void bounceFraBaggrund() {
+    if (dist(location.x, location.y, 250, 750) < 350) {
+      velocity.y *= -1;
+    }
+  }
+
+  void col() {
+  for (Hoppebold nyHoppebold : nyHoppebold) {
+      if (nyHoppebold != this) {
+        if (dist(location.x, location.y, nyHoppebold.location.x, nyHoppebold.location.y) < mass*16 ) {
+          velocity.x *=-1; 
+          velocity.y *=-1;
+        }
+      }
+    }
+  }
+
+  void keyPressed() {
+    if (key == UP) {
+    }
+    if (key == LEFT) {
+    }
+    if (key == DOWN) {
+    }
+    if (key == RIGHT) {
     }
   }
 }

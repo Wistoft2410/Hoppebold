@@ -3,8 +3,7 @@ ArrayList<Hoppebold> nyHoppebold;
 void baggrund() {
   background(145, 200, 250);
   fill(150);
-  quad(501, 430, 50, 501, 50, 501, 501, 501);
-  quad(-1, 450, 300, 501, 300, 502, -1, 502);  
+  ellipse(250, 750, 700, 700);
   noStroke();  
   fill(250, 215, 30);
   pushMatrix();
@@ -30,11 +29,16 @@ void setup() {
 void draw() {
   clear();
   baggrund();
-  //m.applyForce(wind);
+
 
   for (Hoppebold nyHoppebold : nyHoppebold) {
     nyHoppebold.applyForce(gravity);
+    nyHoppebold.applyForce(wind);
+
+    nyHoppebold.bounceFraBaggrund();
     nyHoppebold.checkEdges();
+    nyHoppebold.col();
+
     nyHoppebold.display();
     nyHoppebold.update();
   }
