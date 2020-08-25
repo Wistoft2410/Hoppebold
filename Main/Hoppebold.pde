@@ -11,7 +11,7 @@ class Hoppebold {
 
   Hoppebold(float tempMass, int tempX, int tempY) {
     mass = tempMass;
-    location.x = tempX + random(0, 200);
+    location.x = tempX + random(0, 500);
     location.y = tempY + random(0, 200);
   }
 
@@ -48,7 +48,6 @@ class Hoppebold {
       location.y = height;
     }
   }
-
 
   void bounceFraBaggrund() {
     if (dist(location.x, location.y, 250, 750) < 350) {
