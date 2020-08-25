@@ -8,8 +8,10 @@ void setup() {
 void draw() {
   clear();
   //m.applyForce(wind); 
+  hb.Baggrund();
   hb.applyForce(gravity);
   hb.checkEdges();
   hb.display();
   hb.update();
+
 }
