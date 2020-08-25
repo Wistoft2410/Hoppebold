@@ -5,7 +5,7 @@ class Hoppebold {
 
   Hoppebold(float tempX, float tempY) {
     tempX = x;
-    tempY = y; 
+    tempY = y;
   }
 
   void TegnBold() {
@@ -13,15 +13,15 @@ class Hoppebold {
     ellipse(location.x+x, location.y+y, 30, 30);
   }
 
-  void Tyndekraft(){
-    if (location.y <= height+15){
+  void Tyndekraft() {
+    if (location.y <= height+15) {
       location.add(gravity);
     }
-    
-    if (location.y >= height-15){
-     location.sub(gravity); 
+
+    if (location.y >= height-15) {
+      location.sub(gravity);
     }
-}
+  }
 
   void Reflekter() {
   }
