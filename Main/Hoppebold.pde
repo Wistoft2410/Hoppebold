@@ -47,15 +47,4 @@ class Hoppebold {
       location.y = height;
     }
   }
-
-  void keyPressed() {
-    if (key == UP) {
-    }
-    if (key == LEFT) {
-    }
-    if (key == DOWN) {
-    }
-    if (key == RIGHT) {
-    }
-  }
 }

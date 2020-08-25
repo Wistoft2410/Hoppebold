@@ -1,20 +1,11 @@
-Hoppebold[] hb = new Hoppebold[2];
-
-void setup() {
-  size(500, 500);
-
-  for (int i=0; i < 2; i++)
-    hb[i] = new Hoppebold(1, 1, 1);
-}
+ArrayList<Hoppebold> nyHoppebold; 
 
 void baggrund() {
-  
   background(145, 200, 250);
   fill(150);
   quad(501, 430, 50, 501, 50, 501, 501, 501);
   quad(-1, 450, 300, 501, 300, 502, -1, 502);  
-
-  noStroke();
+  noStroke();  
   fill(250, 215, 30);
   pushMatrix();
   translate(450, 50);
@@ -28,14 +19,30 @@ void baggrund() {
   popMatrix();
 }
 
+void setup() {
+  size(500, 500);
+  nyHoppebold = new ArrayList<Hoppebold>();
+
+  for (int i=0; i < 2; i++)
+    nyHoppebold.add(new Hoppebold(1, 2, 3));
+}
+
 void draw() {
   clear();
   baggrund();
-  //m.applyForce(wind); 
-  for (int i=0; i <2; i++) {
-    hb[i].applyForce(gravity);
-    hb[i].checkEdges();
-    hb[i].display();
-    hb[i].update();
+  //m.applyForce(wind);
+
+  for (Hoppebold nyHoppebold : nyHoppebold) {
+    nyHoppebold.applyForce(gravity);
+    nyHoppebold.checkEdges();
+    nyHoppebold.display();
+    nyHoppebold.update();
+  }
+}
+
+void keyPressed() {
+  if (key == 'r') {
+    println("Reset");
+    frameCount =-1;
   }
 }
